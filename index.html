@@ -172,8 +172,116 @@
     <!-- ==================== MAIN CONTENT AREA ==================== -->
     <!-- All game cards go inside this main tag -->
     <main id="gamesContainer">
+
+        <!-- ==================== GAME 1: ARK NOVA ==================== -->
+        <!-- This is the complete card for one game. COPY THIS ENTIRE SECTION (from opening <div> to closing </div>) to add a new game -->
+        <div class="game-card collapsed">
+            <!-- Header: Contains the game title and metadata. When clicked, expands/collapses the rules -->
+            <div class="game-header" onclick="toggleCard(this.parentNode)">
+                <h2 class="game-title">Ark Nova</h2>
+                <div style="display: flex; align-items: center;">
+                    <!-- Metadata: Shows player count and duration -->
+                    <div class="game-meta">
+                        <span>1-4 Players</span>
+                        <span>90-150 Min</span>
+                    </div>
+                    <!-- Toggle icon: The arrow that rotates when you click -->
+                    <span class="toggle-icon"></span>
+                </div>
+            </div>
+            
+            <!-- Content: All the rule sections for this game in single column -->
+            <div class="game-content">
+                
+                <!-- SECTION 1: Game Overview -->
+                <div>
+                    <h3 class="section-title">Game Overview</h3>
+                    <ul>
+                        <li><strong>Theme:</strong> Build and scientifically manage a modern zoo via tailored enclosures, conservation partnerships, and university networks.</li>
+                        <li><strong>Goal:</strong> Drive commercial Appeal and environmental Conservation counters from opposite ends of a single track until they cross.</li>
+                        <li><strong>Scoring:</strong> Subtract the track intersection's lowest baseline appeal value from your final Appeal track position.</li>
+                        <li><strong>Tie-Breakers:</strong> Most supported conservation projects wins, determined by the fewest tokens left on your map column.</li>
+                    </ul>
+                </div>
+                
+                <!-- SECTION 2: General Setup -->
+                <div>
+                    <h3 class="section-title">General Setup</h3>
+                    <ul>
+                        <li><strong>1. Main Board:</strong> Place in the center, and position the Break token based on player count.</li>
+                        <li><strong>2. Card Display:</strong> Shuffle Zoo cards (mixing in expansion cards); deal 6 face-up cards to the display.</li>
+                        <li><strong>3. Bonus Tiles:</strong> Draw 4 random tiles for the board; place 1 extra face-up tile next to Reputation space 15.</li>
+                        <li><strong>4. Association Board:</strong> Use the replacement expansion board containing the new generic university slot.</li>
+                        <li><strong>5. University Supply:</strong> Place standard universities on the board and layout the 7 specific, animal-themed universities next to it.</li>
+                        <li><strong>4. Conservation Projects:</strong> Deal 3 (or 4 in a 4-player game) face-up Base Conservation Project cards below the board.</li>
+                        <li><strong>5. Component Pool:</strong> Add aquariums, unique buildings, and expansion tokens into the general supply organizers.</li>
+                    </ul>
+                </div>
+                
+                <!-- SECTION 3: Player Setup -->
+                <div>
+                    <h3 class="section-title">Player Setup</h3>
+                    <ul>
+                        <li><strong>1. Zoo Maps:</strong> Take a map (Map A for beginners) and place 1 starting empty size-3 enclosure and a kiosk if specified.</li>
+                        <li><strong>2. Action Card Draft:</strong> Randomly deal 3 alternate Action cards per player. Draft two, discard one, and replace their standard counterparts.</li>
+                        <li><strong>3. Card Layout:</strong> Place Animals card in slot 1; arrange remaining 4 Action cards randomly in slots 2–5 with Side I up.</li>
+                        <li><strong>4. Starting Hand:</strong> Draw 8 Zoo cards, choose 4 to keep, and discard the rest face up.</li>
+                        <li><strong>5. Scoring Cards:</strong> Draw 2 Final Scoring cards to keep hidden.</li>
+                        <li><strong>6. Starting Resources:</strong> Collect 25 money, 1 active worker on your notepad, and 3 workers resting below.</li>
+                        <li><strong>7. Score Tracks:</strong> Place markers on space 0 for conservation and reputation; scale starting appeal from 0 to 3 based on turn order.</li>
+                        <li><strong>8. Player Tokens:</strong> Place the 7 animal-shaped expansion tokens on the left edge of your zoo map.</li>
+                    </ul>
+                </div>
+                
+                <!-- SECTION 4: Round Structure -->
+                <div>
+                    <h3 class="section-title">Round Structure</h3>
+                    <ul>
+                        <li><strong>Continuous Turns:</strong> Ark Nova has no structured round phases; players continuously take clockwise turns one after another.</li>
+                        <li><strong>Turn Cycle Interruption:</strong> Routine gameplay pauses globally whenever the Break token reaches the end of the Break track.</li>
+                        <li><strong>The Break Phase Procedure:</strong></li>
+                        <ul>
+                            <li><strong>Hand Limit:</strong> Discard down to 3 cards (or 5 cards if holding a specific university).</li>
+                            <li><strong>Token Cleanup:</strong> Remove Multiplier, Venom, and Constriction tokens from all personal Action cards.</li>
+                            <li><strong>Worker Recall:</strong> Return all deployed association workers back to player notepad areas.</li>
+                            <li><strong>Board Refresh:</strong> Replenish partner zoos and universities; discard the bottom two display cards and slide remaining down.</li>
+                            <li><strong>Expansion Wipe:</strong> Trigger wave icon rules if sea cards enter the display during replenishment.</li>
+                            <li><strong>Collect Income:</strong> Gain money matching your Appeal track value, adjacent kiosk configurations, and active purple icons.</li>
+                            <li><strong>Reset Tracker:</strong> Reset the Break token to its starting player count position.</li>
+                            </ul>
+                    </ul>
+                </div>
+                
+                <!-- SECTION 5: Available Actions -->
+                <div>
+                    <h3 class="section-title">Available Actions</h3>
+                    <ul>
+                        <li><strong>Cards Action:</strong> Advance the Break track by 2 spaces; draw cards from the deck or within reputation range depending on card upgrade status.</li>
+                        <li><strong>Build Action:</strong> Spend 2 money per grid space to construct kiosks, pavilions, standard enclosures, or aquariums adjacent to existing buildings.</li>
+                        <li><strong>Animals Action:</strong> Play animal cards from hand (or display if upgraded), paying costs and populating empty matching-sized enclosures.</li>
+                        <li><strong>Association Action:</strong> Deploy active workers to gain partner zoos, claim universities, support conservation projects, or make monetary donations.</li>
+                        <li><strong>Sponsors Action:</strong> Play a Sponsor card matching your action strength or advance the Break track to collect cash.</li>
+                        <li><strong>X-Token Action:</strong> Pass on performing card actions to move any chosen action card to slot 1 and gain exactly 1 X-Token.</li>
+                    </ul>
+                </div>
+                
+                <!-- SECTION 6: Key Concepts -->
+                <div>
+                    <h3 class="section-title">Key Concepts</h3>
+                    <ul>
+                        <li><strong>Action Strength (X):</strong> Determined by the card's slot location (1 to 5); using a card drops it to slot 1 and shifts left cards right.</li>
+                        <li><strong>Enclosure Adjacency:</strong> Buildings must connect along at least one hex edge; rock and water map spaces cannot be built over</li>
+                        <li><strong>Aquariums:</strong> Special enclosures (Small/Size 2, Large/Size 5) that must be built next to water; they house sea animals using player tokens.</li>
+                        <li><strong>Reef Dwellers:</strong> Sea animals that trigger their unique chain-reaction effects across all previously played reef dwellers in your zoo.</li>
+                        <li><strong>Wave Icon:</strong> Appears on sea cards; forces immediate discarding of the display's bottom card when revealed during board replenishment.</li>
+                        <li><strong>Generic & Specific Universities:</strong> Claiming the generic university lets you take a specific university block, granting an animal icon, research icon, and a deck search.</li>
+                        <li><strong>Card Upgrades:</strong> Flipping cards to Side II allows accessing advanced powers, building on restricted spaces, and breaking track boundaries.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
-        <!-- ==================== GAME 1: BRASS:LANCASHIRE (2P) ==================== -->
+        <!-- ==================== GAME 2: BRASS:LANCASHIRE (2P) ==================== -->
         <!-- This is the complete card for one game. COPY THIS ENTIRE SECTION (from opening <div> to closing </div>) to add a new game -->
         <div class="game-card collapsed">
             <!-- Header: Contains the game title and metadata. When clicked, expands/collapses the rules -->
@@ -234,7 +342,7 @@
                 
                 <!-- SECTION 4: Round Structure -->
                 <div>
-                    <h3 class="section-title">Game/Round Structure</h3>
+                    <h3 class="section-title">Round Structure</h3>
                     <ul>
                         <li><strong>Eras:</strong> Each Era (Canal and Rail) lasts until all cards in hands and the deck are spent.</li>
                         <li><strong>Player Turns:</strong> Perform 2 actions (Exception: 1 action in the very first round of the Canal Era).</li>
@@ -245,7 +353,6 @@
                                 <li><strong>Take Income:</strong> Collect track value from bank (or pay if negative).</li>
                                 <li><strong>Refill Hand:</strong> Draw back up to 8 cards.</li>
                             </ul>
-                        </li>
                     </ul>
                 </div>
                 
