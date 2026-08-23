@@ -26,9 +26,6 @@
         header {
             max-width: 1000px;
             margin: 0 auto 30px auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 20px;
         }
@@ -37,22 +34,6 @@
             margin: 0;
             font-size: 24px;
             letter-spacing: 0.5px;
-        }
-
-        .search-bar {
-            width: 100%;
-            max-width: 300px;
-            padding: 10px 14px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            background-color: #15151a;
-            color: var(--text-main);
-            font-size: 14px;
-            outline: none;
-        }
-
-        .search-bar:focus {
-            border-color: var(--accent-color);
         }
 
         main {
@@ -97,9 +78,15 @@
         .game-content {
             padding: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
             border-top: 1px solid var(--border-color);
+        }
+
+        @media (min-width: 768px) {
+            .game-content {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
         }
 
         .section-title {
@@ -127,10 +114,6 @@
             color: #fff;
         }
 
-        .hidden {
-            display: none !important;
-        }
-
         .toggle-icon::after {
             content: '▼';
             display: inline-block;
@@ -153,7 +136,6 @@
 
     <header>
         <h1>Game Rules Cheat Sheets</h1>
-        <input type="text" id="searchInput" class="search-bar" placeholder="Filter games by name...">
     </header>
 
     <main id="gamesContainer">
@@ -247,21 +229,6 @@
         function toggleCard(cardElement) {
             cardElement.classList.toggle('collapsed');
         }
-
-        // Live Filtering Logic
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const cards = document.querySelectorAll('.game-card');
-            
-            cards.forEach(card => {
-                const title = card.querySelector('.game-title').textContent.toLowerCase();
-                if (title.includes(searchTerm)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
     </script>
 </body>
 </html>
