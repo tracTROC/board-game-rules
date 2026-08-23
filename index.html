@@ -198,8 +198,9 @@
                     <h3 class="section-title">Game Overview</h3>
                     <ul>
                         <li><strong>Theme:</strong> Competing entrepreneurs expanding industrial empires in Lancashire during England's Industrial Revolution (1770–1870).</li>
-                        <li><strong>Goal:</strong> Maximize economic expansion by building industries and connecting them via transport networks.</li>
-                        <li><strong>How to Win:</strong> Earn the most Victory Points (VPs) by the end of the Rail Era.</li>
+                        <li><strong>Goal:</strong> Highest Victory Points (VPs) at the end of the Rail Era wins.</li>
+                        <li><strong>Scoring:</strong> VPs come from Link tiles and flipped Industry tiles at the end of each era. At the end of the Rail Era only, convert cash to VPs: £10 = 1 VP.</li>
+                        <li><strong>Tie-Breakers:</strong> Highest income, then most remaining cash, then shared victory.</li>
                     </ul>
                 </div>
                 
@@ -207,11 +208,15 @@
                 <div>
                     <h3 class="section-title">General Setup</h3>
                     <ul>
-                        <li><strong>1. Board:</strong> Place the board face up on the Alternate Map (features fewer locations and an exclamation icon in the upper left).</li>
-                        <li><strong>2. Draw Deck:</strong> Remove all Player Cards that do not feature a cog icon in the bottom right corner. Shuffle the remaining 40 cards and place them face down.</li>
-                        <li><strong>3. Deck Tile:</strong> Insert the Deck tile (Stephenson's Rocket side up) near the bottom of the draw deck, leaving exactly 2 cards (1 per player) beneath it.</li>
-                        <li><strong>4. Market Tiles:</strong> Remove all Distant Cotton Market tiles that do not feature a cog icon on the left side (one "-1", one "-3", and both "0"). Shuffle and place face down.</li>
-                        <li><strong>5. Market Tracks:</strong> Place the Market Marker on the top space of the Distant Cotton Market track. Fill all Coal and Iron market spaces with their respective cubes.</li>
+                        <li><strong>1. Map:</strong> Use Alternate Map (upper-left exclamation icon).</li>
+                        <li><strong>2. Cards:</strong> Remove all cards without a cog icon (leaves 40 cards).</li>
+                        <li><strong>3. Deck Tile:</strong> Place the Deck tile near the bottom of the draw deck.</li>
+                        <ul>
+                            <li><strong>Canal Era:</strong> Place "Stephenson’s Rocket" side up above the bottom 2 cards (1 per player).</li>
+                            <li><strong>Rail Era:</strong> Place Nathaniel Rothschild side up above the bottom 4 cards (2 per player).</li>
+                        </ul>
+                        <li><strong>4. Distant Market:</strong> Remove tiles without a left-side cog (leaves one "-1", one "-3", two "0"). Place Marker on top space.</li>
+                        <li><strong>5. Resource Markets:</strong> Fill all Coal and Iron spaces with cubes.</li>
                     </ul>
                 </div>
                 
@@ -219,25 +224,25 @@
                 <div>
                     <h3 class="section-title">Player Setup</h3>
                     <ul>
-                        <li><strong>1. Components:</strong> Take 1 Player Mat, 1 Character tile, 14 Link tiles, and 37 Industry tiles (stacked face up on the matching mat slots). Industry tiles should be stacked by level.</li>
-                        <li><strong>2. Markers:</strong> Place your hexagonal Victory Point (VP) marker on "0" and your circular Income marker on "10" on the outer progress track.</li>
-                        <li><strong>3. Hand:</strong> Draw a starting hand of 8 cards from the draw deck.</li>
-                        <li><strong>4. Starting Cash:</strong> Take exactly £25 from the bank (instead of the standard £30).</li>
-                        <li><strong>5. Turn Order:</strong> Shuffle both players' Character tiles to randomly determine the starting round turn order.</li>
+                        <li><strong>1. Components:</strong> 1 Player Mat, 1 Character tile, 14 Links, 37 Industries (stacked by level).</li>
+                        <li><strong>2. Markers:</strong> VP marker on "0"; Income marker on "10".</li>
+                        <li><strong>3. Starting Hand:</strong> Draw 8 cards.</li>
+                        <li><strong>4. Starting Cash:</strong> Take £25 from the bank.</li>
+                        <li><strong>5. Turn Order:</strong> Shuffle Character tiles randomly.</li>
                     </ul>
                 </div>
                 
-                <!-- SECTION 4: Game/Round Structure -->
+                <!-- SECTION 4: Round Structure -->
                 <div>
                     <h3 class="section-title">Game/Round Structure</h3>
                     <ul>
-                        <li><strong>Eras:</strong> The game consists of 2 eras: the <strong>Canal Era</strong> and the <strong>Rail Era</strong>. Each era lasts until all cards in the deck and hand are exhausted.</li>
-                        <li><strong>Player Turns:</strong> On your turn, perform 2 actions (Exception: only 1 action each during the very first round of the Canal Era).</li>
-                        <li><strong>Action Cost:</strong> You must discard 1 card from your hand face up to your discard pile for every action taken, including passing.</li>
-                        <li><strong>End of Round:</strong></li>
+                        <li><strong>Eras:</strong> Each Era (Canal and Rail) lasts until all cards in hands and the deck are spent.</li>
+                        <li><strong>Player Turns:</strong> Perform 2 actions (Exception: 1 action in the very first round of the Canal Era).</li>
+                        <li><strong>Action Cost:</strong> Discard 1 card face-up per action, including passing.</li>
+                        <li><strong>End of Round Phase:</strong></li>
                             <ul>
-                                <li><strong>Adjust Turn Order:</strong> The player who spent the least money goes first next round; ties maintain their relative order. Collect spent money and return it to each player.</li>
-                                <li><strong>Take Income:</strong> Collect money from the bank equal to your income level (or pay the bank if your income is negative).</li>
+                                <li><strong>Adjust Turn Order:</strong> Lowest cash spender goes first; ties keep relative order.</li>
+                                <li><strong>Take Income:</strong> Collect track value from bank (or pay if negative).</li>
                                 <li><strong>Refill Hand:</strong> Draw back up to 8 cards.</li>
                             </ul>
                         </li>
@@ -248,33 +253,34 @@
                 <div>
                     <h3 class="section-title">Available Actions</h3>
                     <ul>
-                        <li><strong>Build:</strong> Discard a card to place an Industry tile from your Player Mat onto a valid board location. Unlike all other actions, this requires a specific card to be discarded from your hand:</li>
+                        <li><strong>Build:</strong> Discard a matching card to place the lowest-level industry from your mat.</li>
                         <ul>
-                            <li><strong>Location Card:</strong> Build any available industry type directly at the named location. The location does not need to be part of your network.</li>
-                            <li><strong>Industry Card:</strong> Build that specific industry at a location within your network.</li>
-                            <li><strong>Double Action Wild:</strong> You may spend both of your turn's actions and discard any two cards to build any industry in any valid location.</li>
-                            <li><strong>Resource Costs:</strong> Pay the printed cash cost to the turn order track. You may also need to consume iron or coal as described below.</li>
+                            <li><strong>Location Card:</strong> Build any industry at that named location (network not required).</li>
+                            <li><strong>Industry Card:</strong> Build that specific industry inside your network.</li>
+                            <li><strong>Double Action Wild:</strong> Spend both actions and discard any 2 cards to build any industry anywhere.</li>
+                            <li><strong>First Industry Tile:</strong> If you have no tiles on board, you must use a Location Card or Double Wild.</li>
+                            <li><strong>Overbuilding:</strong> Replace any tile with a higher-level tile of the same type.</li>
+                            <ul>
+                                <li><strong>Own Tile:</strong> Allowed anytime; old cubes on it are lost.</li>
+                                <li><strong>Opponent Tile:</strong> Only Coal/Iron; allowed only if that resource is completely empty on the board and markets.</li>
+                            </ul>
                         </ul>
                         <li><strong>Network:</strong> Discard any card to place a Link tile adjacent to your existing network.</li>
                         <ul>
-                            <li><strong>Canal Era:</strong> Pay £3 to place a canal link on an undeveloped canal line. You may not build on rail lines.</li>
-                            <li><strong>Rail Era:</strong> Pay £5 or £15 to place one or two rail links on undeveloped rail lines. For each rail link consume 1 coal.</li>
+                            <li><strong>Canal Era:</strong> Pay £3. Max 1 link per line (Canal line only).</li>
+                            <li><strong>Rail Era:</strong> Pay £5 for 1 link, or £15 for 2 links (Rail line only). Consume 1 coal per link.</li>
                         </ul>   
-                        <li><strong>Develop:</strong> Discard any card and remove 1 or 2 of your lowest-level Industry tiles from your Player Mat. Consume 1 iron for each removed tile.</li>
-                        <li><strong>Sell:</strong> Discard any card to flip your built Cotton Mills. You may flip several Cotton Mills using a single Sell action. For each sale, you choose whether to sell to a Port or to the Distant Cotton Market.</li>
-                        <li><strong>Sell to a Port:</strong> Discard any card to flip your Cotton Mills by connecting and selling to an unflipped Port.</li>
+                        <li><strong>Develop:</strong> Discard any card to remove 1 or 2 lowest-level industry tiles from your mat. Consume 1 iron per tile.</li>
+                        <li><strong>Sell:</strong> Discard any card to flip one or more built Cotton Mills connected to a buyer.</li>
                         <ul>
-                            <li><strong>Connect:</strong> Trace a route from your Cotton Mill to an unflipped Port tile owned by any player.</li>
-                            <li><strong>Flip the Port:</strong> Flip the Port tile. The owner of that Port advances their Income marker as indicated.</li>
-                            <li><strong>Flip the Mill:</strong> Flip the Cotton Mill tile and advance your Income marker as indicated.</li>
+                            <li><strong>To a Port:</strong> Trace a connected route to any player's unflipped Port. Flip both tiles; both players gain track income.</li>
+                            <li><strong>To Distant Market:</strong> Trace a connected route to a market trade icon (Ports/border cities). Flip top market tile, move track marker. If it hits "X", the sale fails: your mill stays unflipped and no income is gained.</li>
                         </ul>
-                        <li><strong>Sell to the Distant Cotton Market:</strong> Discard any card to flip your Cotton Mills by connecting and selling to the Distant Cotton Market.</li>
+                        <li><strong>Loan:</strong> Discard any card. Take £10, £20, or £30. Move income marker back 1, 2, or 3 levels (not individual spaces).</li>
                         <ul>
-                            <li><strong>Connect:</strong> Trace a route from your Cotton Mill to a market trade icon (found on all Ports and on certain border cities). Check that the Distant Cotton Market Marker is not on the "X" space.</li>
-                            <li><strong>Adjust the Market:</strong> Flip the topmost Distant Market tile and move the Market Marker as indicated. If the marker reaches the "X" space, end your Sell action; your Mill does not flip and you get no income.</li>
+                            <li><strong>Restrictions:</strong> You cannot take a loan during the final 4 rounds of the Rail Era (once the draw deck is empty). Revealing the Nathaniel Rothschild tile signals that the current round is your final opportunity to take a loan.</li>
                         </ul>
-                        <li><strong>Loan:</strong> Discard any card to take £10, £20, or £30 from the bank. Move your Income marker back 1, 2, or 3 income levels (not progress track spaces).</li>
-                        <li><strong>Pass:</strong> Discard a card to pass, do not take an action this turn.</li>
+                        <li><strong>Pass:</strong> Discard 1 card. Do nothing.</li>
                     </ul>
                 </div>
                 
@@ -282,60 +288,49 @@
                 <div>
                     <h3 class="section-title">Key Concepts</h3>
                     <ul>
-                        <li><strong>Card Rules:</strong> Only the <strong>Build</strong> action requires specific card matching (Location cards let you build anywhere on that Location; Industry cards let you build that type anywhere).</li>
-                        <li><strong>Your Network:</strong> Any board location where you have at least one Industry tile or an adjacent Link tile.</li>
-                        <li><strong>Connected Locations:</strong> Two locations are connected if you can trace an uninterrupted line of Link tiles belonging to any player between them.</li>
-                        <li><strong>Consuming Iron:</strong> Does not require a connection. Must be taken from any unflipped Iron Works first (free), or purchased from the market if none are available.</li>
-                        <li><strong>Consuming Coal:</strong> Requires a connection to a source. Must be taken from the closest unflipped Coal Mine (free), or purchased from the market via a market connection.</li>
-                        <li><strong>Flipping Tiles:</strong> Built tiles flip to their black side when their primary mechanic is fulfilled (mines empty their cubes; mills/ports sell cotton; shipyards flip automatically in Rail Era).</li>
-                        <li><strong>Overbuilding:</strong> You can replace a built tile on the board with a higher-level tile of the same type. When you overbuild your own tile, any iron/coal on it is lost and must be repaid.</li>
-                        <li><strong>Selling to the Market:</strong> Selling to the market happens automatically and instantly during the Build action. You never use a Sell action for resource cubes.</li>
+                        <li><strong>Networks & Connections:</strong></li>
                         <ul>
-                            <li><strong>Trigger:</strong> When you build an Iron Works (anywhere), or a Coal Mine that is connected to a market trade icon.</li>
-                            <li><strong>Selling:</strong> Immediately move as many cubes as possible from the newly placed tile into the empty spaces of its corresponding Market track, filling the most expensive spaces first.</li>
-                            <li><strong>Reward:</strong> For each cube moved, you immediately collect the cash value shown on the coin to the left of that market space.</li>
-                            <li><strong>Instant Flip:</strong> If moving these cubes empties the tile completely, it flips immediately, and you advance your Income marker as indicated on the tile.</li>
-                            <li><strong>Constraint:</strong> This sale only triggers at the exact moment of building; cubes cannot be sold to the markets on later turns.</li>
+                            <li><strong>Networks:</strong> Locations containing your industry tiles or adjacent to your link tiles.</li>
+                            <li><strong>Connections:</strong> Locations linked by an uninterrupted line of links belonging to any player.</li>
                         </ul>
-                        <li><strong>Canal Era Restrictions:</strong> Maximum of 1 Industry tile per player per location. Level 1 industries are cleared from the board at the end of this era.</li>
-                        <li><strong>Rail Era Restrictions:</strong> You can build multiple industries per location. You may not take a loan during the final 4 rounds of the Rail Era (when there are fewer than 8 cards in the deck).</li>
+                        <li><strong>Consuming Resources:</strong></li>
+                        <ul>
+                            <li><strong>Iron:</strong> No connection required. Take free from any player's unflipped Iron Works first, then buy from market.</li>
+                            <li><strong>Coal:</strong> Requires a connection to the source. Take free from the closest connected unflipped mine first, then buy from market via a market connection.</li>
+                        </ul>
+                        <li><strong>Market Sales:</strong></li>
+                        <ul>
+                            <li><strong>Trigger:</strong> Happens instantly when building an Iron Works, or a Coal Mine connected to a market icon.</li>
+                            <li><strong>Process:</strong> Move cubes from the tile to fill empty market track slots (filling expensive slots first). Collect cash shown next to the filled slots.</li>
+                            <li><strong>Trigger:</strong> If emptied, flip the tile immediately for income.</li>
+                            <li><strong>Restriction:</strong> This is automatic at build time; you cannot manually "Sell" resource cubes later. Market cash does not offset your turn expenditure for turn order.</li>
+                        </ul>
+                        <li><strong>Flipping Tiles:</strong> Tiles flip to their black side when emptied (mines), traded (mills/ports), or automatically in the Rail Era (shipyards). Flipped tiles grant VPs at the end of the era.</li>
                     </ul>
                 </div>
                 
-                <!-- SECTION 7: Winning the Game -->
+                <!-- SECTION 7: Era Transitions & Restrictions -->
                 <div>
-                    <h3 class="section-title">Winning the Game</h3>
+                    <h3 class="section-title">Era Transitions & Restrictions</h3>
                     <ul>
-                        <li><strong>Canal Era Ending:</strong> Each era ends immediately following the round where all players exhaust their cards.</li>
-                        <li><strong>Canal Era Scoring:</strong> VPs are scored for your Link tiles (1 VP per adjacent connection icon) and flipped Industry tiles.</li>
-                        <li><strong>Rail Era Transition:</strong> Perform these steps in exact order immediately after scoring the Canal Era:</li>
-                            <ul>
-                                <li><strong>Remove Obsolete Industries:</strong> Wipe all Level 1 Industry tiles from the board and return them to the box. Level 2 or greater industries remain on the board.</li>
-                                <li><strong>Reset Distant Cotton Market:</strong> Place the Market Marker back on the top space of its track. Gather all discarded market tiles, shuffle them together, and place them face down.</li>
-                                <li><strong>Shuffle Draw Deck:</strong> Combine the unused cards underneath the Deck tile with all players' discard piles, shuffle them completely, and place them back in the deck box.</li>
-                                <li><strong>Draw New Hands:</strong> Each player draws a fresh starting hand of 8 cards from the newly shuffled deck.</li>
-                                <li><strong>Insert Deck Tile:</strong> Flip the Deck tile to the Nathan Rothschild side face up. Insert it near the bottom of the deck, ensuring there are exactly 2 cards (1 per player) beneath it.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Rail Era Scoring:</strong> VPs are scored for your Link tiles (1 VP per adjacent connection icon) and flipped Industry tiles. At the end of the Rail Era only, merchants on unflipped Cotton Mills are scored (1 VP each).</li>
-                        <li><strong>Tie-Breaker:</strong> Ties are broken first by the highest income level, then by the most remaining cash. If still tied, players draw.</li>
+                        <li><strong>Canal Era Restrictions:</strong></li>
+                        <li>Max 1 industry tile per player per location.</li>
+                        <li>Level 1 industries cannot be overbuilt. Use the Develop action to skip them.</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Rail Era Transition:</strong></li>
+                        <li><strong>Wipe Board:</strong> Remove all Level 1 industry tiles from the board to the box. Level 2+ remain.</li>
+                        <li><strong>Reset Market:</strong> Reset Distant Cotton Marker to top; shuffle all market tiles face down.</li>
+                        <li><strong>Rest Deck:</strong> Combine cards under the Deck tile with all discard piles; shuffle fully.</li>
+                        <li><strong>Draw Hands:</strong> Both players draw 8 cards.</li>
+                        <li><strong>Insert Deck Tile:</strong> Flip tile to Nathaniel Rothschild side; place above the bottom 4 cards (2 per player).</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Rail Era Restrictions:</strong></li>
+                        <li>Multiple industries per player per location are allowed.</li>
+                        <li><strong>Final Scoring Clarification:</strong> Only flipped industry tiles score VPs. Any unflipped industries left on the board at the end of the game are worth 0 VPs.</li>
                     </ul>
                 </div>
-
-                <!-- SECTION 8: Common Rules Queries -->
-                <div>
-                    <h3 class="section-title">Common Rules Queries</h3>
-                    <ul>
-                        <li><strong>The First Industry Placement:</strong> If you have zero tiles on the board, you cannot use an Industry card to build. You must use a Location card or the Double-Action Wild discard to place your very first industry. Industry cards only work once you have an existing network to build off of.</li>
-                        <li><strong>Coal vs. Iron Sourcing:</strong> Iron travels by road and does not require a connection — you can pull it from any location on the map. Coal is bulky and requires a valid connection.</li>
-                        <li><strong>Closest Coal Rule:</strong> When consuming coal from the map, you must take it from the closest connected unflipped Coal Mine. You cannot skip a closer opponent's Coal Mine to use your own Coal Mine further away.</li>
-                        <li><strong>Selling to the Market:</strong> When you build a Coal Mine or Iron Works, the resource cubes placed on it come from the general supply, not the market. Furthermore, you cannot "Sell" coal to the market as a separate action; it sells automatically upon building if a valid path exists.</li>
-                        <li><strong>Overbuilding Opponents:</strong> You can overbuild an opponent's Coal Mine or Iron Works with a higher-level version, but only if there are zero cubes of that resource anywhere on the map or in the market. If even one cube remains, the overbuild is illegal. (Note: You can overbuild your own tiles at any time, regardless of cubes).</li>
-                        <li><strong>Income Spent vs. Turn Order Track:</strong> Money earned from selling to the markets or ports does not reduce your round expenditure for next round's turn order. Turn order is calculated strictly by how much cash you spent out of pocket during your actions.</li>
-                        <li><strong>Canal Era Upgrades:</strong> You can never build a higher-level industry over a Level 1 tile during the Canal Era. Since you are limited to a maximum of 1 industry tile per player per location during this era, you must use the Develop action to clear low-level tiles if you want to bypass them.</li>
-                    </ul>
-                </div>
-                            
             </div>
         </div>
 
