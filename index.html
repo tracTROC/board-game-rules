@@ -159,7 +159,7 @@
     <main id="gamesContainer">
         
         <!-- GAME 1: CATAN -->
-        <div class="game-card">
+        <div class="game-card collapsed">
             <div class="game-header" onclick="toggleCard(this.parentNode)">
                 <h2 class="game-title">Catan</h2>
                 <div style="display: flex; align-items: center;">
@@ -200,7 +200,7 @@
         </div>
 
         <!-- GAME 2: CARCASSONNE -->
-        <div class="game-card">
+        <div class="game-card collapsed">
             <div class="game-header" onclick="toggleCard(this.parentNode)">
                 <h2 class="game-title">Carcassonne</h2>
                 <div style="display: flex; align-items: center;">
@@ -258,7 +258,7 @@
                 if (title.includes(searchTerm)) {
                     card.classList.remove('hidden');
                 } else {
-                    card.add('hidden');
+                    card.classList.add('hidden');
                 }
             });
         });
