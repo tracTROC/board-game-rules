@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Rules Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #1e1e24;
+            --panel-bg: #2a2a35;
+            --accent-color: #ff758f;
+            --text-main: #f4f4f6;
+            --text-muted: #a0a0b0;
+            --border-color: #3f3f50;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        header {
+            max-width: 1000px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: #15151a;
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-color);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .game-card {
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: transform 0.15s ease;
+        }
+
+        .game-header {
+            padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .game-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .game-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            gap: 15px;
+        }
+
+        .game-content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 117, 143, 0.2);
+            padding-bottom: 4px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        li strong {
+            color: #fff;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .toggle-icon::after {
+            content: '▼';
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 12px;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        .game-card.collapsed .game-content {
+            display: none;
+        }
+
+        .game-card.collapsed .toggle-icon::after {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Game Rules Cheat Sheets</h1>
+        <input type="text" id="searchInput" class="search-bar" placeholder="Filter games by name...">
+    </header>
+
+    <main id="gamesContainer">
+        
+        <!-- GAME 1: CATAN -->
+        <div class="game-card">
+            <div class="game-header" onclick="toggleCard(this.parentNode)">
+                <h2 class="game-title">Catan</h2>
+                <div style="display: flex; align-items: center;">
+                    <div class="game-meta">
+                        <span>3-4 Players</span>
+                        <span>60-90 Min</span>
+                    </div>
+                    <span class="toggle-icon"></span>
+                </div>
+            </div>
+            <div class="game-content">
+                <div>
+                    <h3 class="section-title">Setup</h3>
+                    <ul>
+                        <li><strong>Resources:</strong> Place terrain hexes randomly or use standard map.</li>
+                        <li><strong>Numbers:</strong> Distribute number tokens alphabetically skipping 'I'.</li>
+                        <li><strong>Initial:</strong> Roll for order. Place 1 settlement + 1 road. Repeat in reverse order for 2nd settlement.</li>
+                        <li><strong>Starting Income:</strong> Take 1 resource card for each hex adjacent to your 2nd settlement.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">Turn Sequence</h3>
+                    <ul>
+                        <li><strong>1. Roll Dice:</strong> All players collect resources matched to the hex number rolled.</li>
+                        <li><strong>2. Trade:</strong> Trade resource cards with other players or with the bank (4:1 or port rate).</li>
+                        <li><strong>3. Build:</strong> Spend resources on Roads, Settlements, Cities, or Dev Cards.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">Key Rules</h3>
+                    <ul>
+                        <li><strong>Distance Rule:</strong> Settlements must be at least 2 intersections away from all others.</li>
+                        <li><strong>Rolling a 7:</strong> Discard half cards if holding &gt;7. Move the Robber to block income. Steal 1 card.</li>
+                        <li><strong>Victory:</strong> First player to reach 10 Victory Points on their own turn wins.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- GAME 2: CARCASSONNE -->
+        <div class="game-card">
+            <div class="game-header" onclick="toggleCard(this.parentNode)">
+                <h2 class="game-title">Carcassonne</h2>
+                <div style="display: flex; align-items: center;">
+                    <div class="game-meta">
+                        <span>2-5 Players</span>
+                        <span>35 Min</span>
+                    </div>
+                    <span class="toggle-icon"></span>
+                </div>
+            </div>
+            <div class="game-content">
+                <div>
+                    <h3 class="section-title">Turn Sequence</h3>
+                    <ul>
+                        <li><strong>1. Draw:</strong> Draw exactly one land tile from the pool.</li>
+                        <li><strong>2. Place:</strong> Attach it to existing tiles matching all adjacent features (Road, City, Field).</li>
+                        <li><strong>3. Meeple (Optional):</strong> Place a worker from your supply onto a feature on that newly placed tile.</li>
+                        <li><strong>4. Score:</strong> Check if any features are completed. Score points and return meeples.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">Scoring Rules</h3>
+                    <ul>
+                        <li><strong>Roads:</strong> 1 Point per tile when capped at both ends.</li>
+                        <li><strong>Cities:</strong> 2 Points per tile + 2 per shield emblem when fully enclosed.</li>
+                        <li><strong>Monasteries:</strong> 9 Points when completely surrounded by 8 tiles.</li>
+                        <li><strong>Farmers:</strong> 3 Points per completed city adjacent to your field (scored only at endgame).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">Restrictions</h3>
+                    <ul>
+                        <li><strong>No Sharing:</strong> Cannot place a meeple on a feature already occupied by another player's meeple.</li>
+                        <li><strong>Merging:</strong> Features can merge later through strategic tile placement. Majority rules for score.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Toggle Card Visibility
+        function toggleCard(cardElement) {
+            cardElement.classList.toggle('collapsed');
+        }
+
+        // Live Filtering Logic
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.game-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.game-title').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
