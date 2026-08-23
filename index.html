@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board Game Rules Dashboard</title>
     <style>
+        /* ==================== COLOR VARIABLES ==================== */
+        /* These define the color scheme for the entire page */
         :root {
             --bg-color: #1e1e24;
             --panel-bg: #2a2a35;
@@ -14,6 +16,8 @@
             --border-color: #3f3f50;
         }
 
+        /* ==================== BODY STYLES ==================== */
+        /* Sets the basic look and feel of the page */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
@@ -23,6 +27,8 @@
             line-height: 1.5;
         }
 
+        /* ==================== HEADER STYLES ==================== */
+        /* Styles the top section with the title */
         header {
             max-width: 1000px;
             margin: 0 auto 30px auto;
@@ -36,6 +42,8 @@
             letter-spacing: 0.5px;
         }
 
+        /* ==================== MAIN CONTENT AREA ==================== */
+        /* Container that holds all the game cards */
         main {
             max-width: 1000px;
             margin: 0 auto;
@@ -44,6 +52,8 @@
             gap: 20px;
         }
 
+        /* ==================== GAME CARD STYLES ==================== */
+        /* The main box that wraps each game's information */
         .game-card {
             background-color: var(--panel-bg);
             border-radius: 8px;
@@ -52,6 +62,8 @@
             transition: transform 0.15s ease;
         }
 
+        /* ==================== GAME HEADER STYLES ==================== */
+        /* The clickable bar at the top of each game card */
         .game-header {
             padding: 15px 20px;
             background-color: rgba(0, 0, 0, 0.15);
@@ -68,6 +80,8 @@
             margin: 0;
         }
 
+        /* ==================== GAME META INFO STYLES ==================== */
+        /* Displays player count and game duration in the header */
         .game-meta {
             font-size: 12px;
             color: var(--text-muted);
@@ -75,6 +89,8 @@
             gap: 15px;
         }
 
+        /* ==================== GAME CONTENT STYLES ==================== */
+        /* Contains all the rule sections for each game */
         .game-content {
             padding: 20px;
             display: grid;
@@ -83,12 +99,15 @@
             border-top: 1px solid var(--border-color);
         }
 
+        /* On larger screens (tablets/desktop), show rules in multiple columns */
         @media (min-width: 768px) {
             .game-content {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
 
+        /* ==================== SECTION TITLE STYLES ==================== */
+        /* Styles for headings like "Setup", "Turn Sequence", etc. */
         .section-title {
             font-size: 14px;
             text-transform: uppercase;
@@ -100,6 +119,8 @@
             padding-bottom: 4px;
         }
 
+        /* ==================== LIST STYLES ==================== */
+        /* Styles bullet points and text within rule sections */
         ul {
             margin: 0;
             padding-left: 18px;
@@ -114,6 +135,8 @@
             color: #fff;
         }
 
+        /* ==================== TOGGLE ICON STYLES ==================== */
+        /* The arrow that shows if a section is expanded or collapsed */
         .toggle-icon::after {
             content: '▼';
             display: inline-block;
@@ -123,6 +146,8 @@
             transition: transform 0.2s;
         }
 
+        /* ==================== COLLAPSED STATE ==================== */
+        /* These styles hide content and rotate the arrow when collapsed */
         .game-card.collapsed .game-content {
             display: none;
         }
@@ -134,25 +159,36 @@
 </head>
 <body>
 
+    <!-- ==================== PAGE HEADER ==================== -->
+    <!-- The title at the top of the page -->
     <header>
         <h1>Game Rules Cheat Sheets</h1>
     </header>
 
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <!-- All game cards go inside this main tag -->
     <main id="gamesContainer">
         
-        <!-- GAME 1: CATAN -->
+        <!-- ==================== GAME 1: CATAN ==================== -->
+        <!-- This is the complete card for one game. COPY THIS ENTIRE SECTION (from opening <div> to closing </div>) to add a new game -->
         <div class="game-card collapsed">
+            <!-- Header: Contains the game title and metadata. When clicked, expands/collapses the rules -->
             <div class="game-header" onclick="toggleCard(this.parentNode)">
                 <h2 class="game-title">Catan</h2>
                 <div style="display: flex; align-items: center;">
+                    <!-- Metadata: Shows player count and duration -->
                     <div class="game-meta">
                         <span>3-4 Players</span>
                         <span>60-90 Min</span>
                     </div>
+                    <!-- Toggle icon: The arrow that rotates when you click -->
                     <span class="toggle-icon"></span>
                 </div>
             </div>
+            
+            <!-- Content: All the rule sections for this game. Each <div> inside is one column -->
             <div class="game-content">
+                <!-- SECTION 1: Setup -->
                 <div>
                     <h3 class="section-title">Setup</h3>
                     <ul>
@@ -162,6 +198,8 @@
                         <li><strong>Starting Income:</strong> Take 1 resource card for each hex adjacent to your 2nd settlement.</li>
                     </ul>
                 </div>
+                
+                <!-- SECTION 2: Turn Sequence -->
                 <div>
                     <h3 class="section-title">Turn Sequence</h3>
                     <ul>
@@ -170,6 +208,8 @@
                         <li><strong>3. Build:</strong> Spend resources on Roads, Settlements, Cities, or Dev Cards.</li>
                     </ul>
                 </div>
+                
+                <!-- SECTION 3: Key Rules -->
                 <div>
                     <h3 class="section-title">Key Rules</h3>
                     <ul>
@@ -181,8 +221,10 @@
             </div>
         </div>
 
-        <!-- GAME 2: CARCASSONNE -->
+        <!-- ==================== GAME 2: CARCASSONNE ==================== -->
+        <!-- This is another complete game card. Follow the same structure as CATAN above -->
         <div class="game-card collapsed">
+            <!-- Header with game title and metadata -->
             <div class="game-header" onclick="toggleCard(this.parentNode)">
                 <h2 class="game-title">Carcassonne</h2>
                 <div style="display: flex; align-items: center;">
@@ -193,7 +235,10 @@
                     <span class="toggle-icon"></span>
                 </div>
             </div>
+            
+            <!-- Game rules organized in sections -->
             <div class="game-content">
+                <!-- SECTION 1: Turn Sequence -->
                 <div>
                     <h3 class="section-title">Turn Sequence</h3>
                     <ul>
@@ -203,6 +248,8 @@
                         <li><strong>4. Score:</strong> Check if any features are completed. Score points and return meeples.</li>
                     </ul>
                 </div>
+                
+                <!-- SECTION 2: Scoring Rules -->
                 <div>
                     <h3 class="section-title">Scoring Rules</h3>
                     <ul>
@@ -212,6 +259,8 @@
                         <li><strong>Farmers:</strong> 3 Points per completed city adjacent to your field (scored only at endgame).</li>
                     </ul>
                 </div>
+                
+                <!-- SECTION 3: Restrictions -->
                 <div>
                     <h3 class="section-title">Restrictions</h3>
                     <ul>
@@ -221,11 +270,26 @@
                 </div>
             </div>
         </div>
+        
+        <!-- ==================== HOW TO ADD A NEW GAME ==================== -->
+        <!-- 
+            To add a new game:
+            1. Copy the entire <div class="game-card collapsed"> ... </div> section above (either CATAN or CARCASSONNE)
+            2. Paste it here (before the closing </main> tag)
+            3. Change the game title in <h2 class="game-title">
+            4. Update the player count and duration in <div class="game-meta">
+            5. Update the section titles (Setup, Turn Sequence, etc.) and content in the <div class="game-content">
+            6. Don't change class names, onclick attributes, or the structure - only change the text content
+        -->
 
     </main>
 
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <!-- This code makes the expand/collapse functionality work -->
     <script>
         // Toggle Card Visibility
+        // This function is called when you click on a game header
+        // It toggles the "collapsed" class which hides/shows the rules
         function toggleCard(cardElement) {
             cardElement.classList.toggle('collapsed');
         }
