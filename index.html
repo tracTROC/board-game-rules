@@ -128,6 +128,17 @@
             color: #fff;
         }
 
+        /* Add extra spacing for top-level list items with nested content */
+        li > ul {
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        li > ul li {
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
         /* ==================== TOGGLE ICON STYLES ==================== */
         /* The arrow that shows if a section is expanded or collapsed */
         .toggle-icon::after {
@@ -208,11 +219,11 @@
                 <div>
                     <h3 class="section-title">Player Setup</h3>
                     <ul>
-                        <li><strong>1. Components:</strong> Take 1 Player Mat, 1 Character tile, 14 Link tiles, and 37 Industry tiles (stacked face up on the matching mat slots). Industry tiles should be stacked by level.</li>
-                        <li><strong>2. Markers:</strong> Place your hexagonal Victory Point (VP) marker on "0" and your circular Income marker on "10" on the outer progress track.</li>
-                        <li><strong>3. Hand:</strong> Draw a starting hand of 8 cards from the draw deck.</li>
-                        <li><strong>4. Starting Cash:</strong> Take exactly £25 from the bank (instead of the standard £30).</li>
-                        <li><strong>5. Turn Order:</strong> Shuffle both players' Character tiles to randomly determine the starting round turn order.</li>
+                        <li><strong>Starting Cash:</strong> Take exactly £25 from the bank (instead of the standard £30).</li>
+                        <li><strong>Components:</strong> Take 1 Player Mat, 1 Character tile, 14 Link tiles, and 37 Industry tiles (stacked face up on the matching mat slots). Industry tiles should be stacked by level.</li>
+                        <li><strong>Markers:</strong> Place your hexagonal Victory Point (VP) marker on "0" and your circular Income marker on "10" on the outer progress track.</li>
+                        <li><strong>Hand:</strong> Draw a starting hand of 8 cards from the draw deck.</li>
+                        <li><strong>Turn Order:</strong> Shuffle both players' Character tiles to randomly determine the starting round turn order.</li>
                     </ul>
                 </div>
                 
@@ -220,15 +231,15 @@
                 <div>
                     <h3 class="section-title">Game/Round Structure</h3>
                     <ul>
-                        <li><strong>Eras:</strong> The game consists of 2 eras: the <strong>Canal Era</strong> and the <strong>Rail Era</strong>. Each era lasts until all cards in the deck and hand are exhausted.</li>
-                        <li><strong>Player Turns:</strong> On your turn, perform 2 actions (Exception: only 1 action each during the very first round of the Canal Era).</li>
-                        <li><strong>Action Cost:</strong> You must discard 1 card from your hand face up to your discard pile for every action taken, including passing.</li>
-                        <li><strong>End of Round:</strong>
-                            <ol type="1">
-                                <li><strong>Adjust Turn Order:</strong> The player who spent the least money goes first next round; ties maintain their relative order. Collect spent money and return it to the supply.</li>
+                        <li><strong>1. Eras:</strong> The game consists of 2 eras: the <strong>Canal Era</strong> and the <strong>Rail Era</strong>. Each era lasts until all cards in the deck and hand are exhausted.</li>
+                        <li><strong>2. Player Turns:</strong> On your turn, perform 2 actions (Exception: only 1 action each during the very first round of the Canal Era).</li>
+                        <li><strong>3. Action Cost:</strong> You must discard 1 card from your hand face up to your discard pile for every action taken, including passing.</li>
+                        <li><strong>4. End of Round:</strong>
+                            <ul>
+                                <li><strong>Adjust Turn Order:</strong> The player who spent the least money goes first next round; ties maintain their relative order. Collect spent money and return it to each player.</li>
                                 <li><strong>Take Income:</strong> Collect money from the bank equal to your income level (or pay the bank if your income is negative).</li>
                                 <li><strong>Refill Hand:</strong> Draw back up to 8 cards.</li>
-                            </ol>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -237,34 +248,10 @@
                 <div>
                     <h3 class="section-title">Available Actions</h3>
                     <ul>
-                        <li><strong>Build:</strong> Place an Industry tile from your Player Mat onto a valid board location. Unlike all other actions, this requires a specific card to be discarded from your hand:</li>
-                        <ul>
-                            <li><i>Location Card:</i> Lets you build any available industry type directly at the named location. The location does not need to be part of your network.</li>
-                            <li><i>Industry Card:</i> Lets you build that specific type of industry, but it must be placed within a location that is already part of your network.</li>
-                            <li><i>Double Action Wild:</i> You may spend both of your turn's actions and discard any two cards to build any industry in any valid location.</li>
-                            <li><i>Resource Costs:</i> Pay the printed cash cost to the turn order track. If the industry requires Iron, it can be taken from anywhere on the board or market (no connection needed). If it requires Coal, the build location must be connected to a valid coal source.</li>
-                        </ul>
-                        
-                        <li><strong>Network:</strong> Expand transport by placing a Link tile adjacent to your existing network. Costs £3 for a Canal Link (Canal Era) or £5 for a Rail Link (Rail Era; requires 1 coal). You can build 2 Rail Links in one action for £15 and 2 coal.</li>
-                        <li><strong>Develop:</strong> Discard any card and consume 1 or 2 iron to remove 1 or 2 lowest-level Industry tiles from your mat to the box, unlocking advanced industries.</li>
-                        <li><strong>Sell:</strong> Discard any card to flip your built Cotton Mills by connecting and selling to an unflipped Port tile or the Distant Cotton Market. You may flip multiple Mills using a single Sell action.</li>
-                        
-                        <li><strong>Selling to a Port:</strong>
-                        <ul>
-                            <li><i>Connect:</i> Trace a route from your Cotton Mill to an unflipped Port tile owned by any player.</li>
-                            <li><i>Flip the Port:</i> Flip the Port tile. The owner of that Port advances their Income as indicated on the flipped tile.</li>
-                            <li><i>Flip the Mill:</i> Flip your Cotton Mill tile and advance your Income as indicated on the flipped tile.</li>
-                            <li><i>Repeat:</i> Repeat the above steps as part of a single Sell action multiple times if possible.</li>
-                        </ul>
-                        
-                        <li><strong>Selling to the Distant Cotton Market:</strong>
-                        <ul>
-                            <li><i>Connect & Check:</i> Trace a route from your Cotton Mill to a Market Trade Icon (found on all ports and certain border cities). Check that the Market Marker is not on the "X" space.</li>
-                            <li><i>Adjust the Market:</i> Flip the topmost Market tile and move the Market Marker down the track by the number of spaces shown on the flipped tile.</li>
-                            <li><i>Check for Crash:</i> If the marker reaches the "X" space, the market crashes. Immediately end your Sell action; your Mill does not flip and you get no income.</li>
-                            <li><i>Flip the Mill:</i> If the marker does not reach the "X" space, advance your Income as indicated on the market track. Then, flip your Cotton Mill tile and advance your Income as indicated on the flipped tile.</li>
-                        </ul>
-                        
+                        <li><strong>Build:</strong> Place an Industry tile from your mat onto the board by discarding a specific matching card, paying the cash cost, and supplying any required resources.</li>
+                        <li><strong>Network:</strong> Expand transport by placing a Link tile adjacent to your existing network. Costs £3 for a Canal Link (Canal Era) or £5 for a Rail Link (Rail Era).</li>
+                        <li><strong>Develop:</strong> Discard any card and consume 1 iron to remove 1 or 2 lowest-level Industry tiles from your mat to the box, unlocking advanced industries.</li>
+                        <li><strong>Sell:</strong> Discard any card to flip your built Cotton Mills by connecting and selling to an unflipped Port tile or the Distant Cotton Market.</li>
                         <li><strong>Loan:</strong> Discard any card to take £10, £20, or £30 from the bank. Move your Income marker back 1, 2, or 3 income levels (not spaces).</li>
                         <li><strong>Pass:</strong> Discard a card to pass, do not take an action this turn.</li>
                     </ul>
@@ -293,13 +280,13 @@
                         <li><strong>Canal Era Ending:</strong> Each era ends immediately following the round where all players exhaust their cards.</li>
                         <li><strong>Canal Era Scoring:</strong> VPs are scored for your Link tiles (1 VP per adjacent connection icon) and flipped Industry tiles.</li>
                         <li><strong>Rail Era Transition:</strong> Perform these steps in exact order immediately after scoring the Canal Era:
-                            <ol type="1">
+                            <ul>
                                 <li><strong>Remove Obsolete Industries:</strong> Wipe all Level 1 Industry tiles from the board and return them to the box. Level 2 or greater industries remain on the board.</li>
                                 <li><strong>Reset Distant Cotton Market:</strong> Place the Market Marker back on the top space of its track. Gather all discarded market tiles, shuffle them together, and place them face down.</li>
                                 <li><strong>Shuffle Draw Deck:</strong> Combine the unused cards underneath the Deck tile with all players' discard piles, shuffle them completely, and place them back in the deck box.</li>
                                 <li><strong>Draw New Hands:</strong> Each player draws a fresh starting hand of 8 cards from the newly shuffled deck.</li>
                                 <li><strong>Insert Deck Tile:</strong> Flip the Deck tile to the Nathan Rothschild side face up. Insert it near the bottom of the deck, ensuring there are exactly 2 cards (1 per player) beneath it.</li>
-                            </ol>
+                            </ul>
                         </li>
                         <li><strong>Rail Era Scoring:</strong> VPs are scored for your Link tiles (1 VP per adjacent connection icon) and flipped Industry tiles. At the end of the Rail Era only, merchants on unflipped Cotton Mills are scored (1 VP each).</li>
                         <li><strong>Tie-Breaker:</strong> Ties are broken first by the highest income level, then by the most remaining cash. If still tied, players draw.</li>
