@@ -225,7 +225,7 @@
                         <li><strong>Action Cost:</strong> You must discard 1 card from your hand face up to your discard pile for every action taken, including passing.</li>
                         <li><strong>End of Round:</strong>
                             <ol type="1">
-                                <li><strong>Adjust Turn Order:</strong> The player who spent the least money goes first next round; ties maintain their relative order. Collect spent money and return it to each player.</li>
+                                <li><strong>Adjust Turn Order:</strong> The player who spent the least money goes first next round; ties maintain their relative order. Collect spent money and return it to the supply.</li>
                                 <li><strong>Take Income:</strong> Collect money from the bank equal to your income level (or pay the bank if your income is negative).</li>
                                 <li><strong>Refill Hand:</strong> Draw back up to 8 cards.</li>
                             </ol>
@@ -237,10 +237,34 @@
                 <div>
                     <h3 class="section-title">Available Actions</h3>
                     <ul>
-                        <li><strong>Build:</strong> Place an Industry tile from your mat onto the board by discarding a specific matching card, paying the cash cost, and supplying any required resources.</li>
-                        <li><strong>Network:</strong> Expand transport by placing a Link tile adjacent to your existing network. Costs £3 for a Canal Link (Canal Era) or £5 for a Rail Link (Rail Era).</li>
-                        <li><strong>Develop:</strong> Discard any card and consume 1 iron to remove 1 or 2 lowest-level Industry tiles from your mat to the box, unlocking advanced industries.</li>
-                        <li><strong>Sell:</strong> Discard any card to flip your built Cotton Mills by connecting and selling to an unflipped Port tile or the Distant Cotton Market.</li>
+                        <li><strong>Build:</strong> Place an Industry tile from your Player Mat onto a valid board location. Unlike all other actions, this requires a specific card to be discarded from your hand:</li>
+                        <ul>
+                            <li><i>Location Card:</i> Lets you build any available industry type directly at the named location. The location does not need to be part of your network.</li>
+                            <li><i>Industry Card:</i> Lets you build that specific type of industry, but it must be placed within a location that is already part of your network.</li>
+                            <li><i>Double Action Wild:</i> You may spend both of your turn's actions and discard any two cards to build any industry in any valid location.</li>
+                            <li><i>Resource Costs:</i> Pay the printed cash cost to the turn order track. If the industry requires Iron, it can be taken from anywhere on the board or market (no connection needed). If it requires Coal, the build location must be connected to a valid coal source.</li>
+                        </ul>
+                        
+                        <li><strong>Network:</strong> Expand transport by placing a Link tile adjacent to your existing network. Costs £3 for a Canal Link (Canal Era) or £5 for a Rail Link (Rail Era; requires 1 coal). You can build 2 Rail Links in one action for £15 and 2 coal.</li>
+                        <li><strong>Develop:</strong> Discard any card and consume 1 or 2 iron to remove 1 or 2 lowest-level Industry tiles from your mat to the box, unlocking advanced industries.</li>
+                        <li><strong>Sell:</strong> Discard any card to flip your built Cotton Mills by connecting and selling to an unflipped Port tile or the Distant Cotton Market. You may flip multiple Mills using a single Sell action.</li>
+                        
+                        <li><strong>Selling to a Port:</strong>
+                        <ul>
+                            <li><i>Connect:</i> Trace a route from your Cotton Mill to an unflipped Port tile owned by any player.</li>
+                            <li><i>Flip the Port:</i> Flip the Port tile. The owner of that Port advances their Income as indicated on the flipped tile.</li>
+                            <li><i>Flip the Mill:</i> Flip your Cotton Mill tile and advance your Income as indicated on the flipped tile.</li>
+                            <li><i>Repeat:</i> Repeat the above steps as part of a single Sell action multiple times if possible.</li>
+                        </ul>
+                        
+                        <li><strong>Selling to the Distant Cotton Market:</strong>
+                        <ul>
+                            <li><i>Connect & Check:</i> Trace a route from your Cotton Mill to a Market Trade Icon (found on all ports and certain border cities). Check that the Market Marker is not on the "X" space.</li>
+                            <li><i>Adjust the Market:</i> Flip the topmost Market tile and move the Market Marker down the track by the number of spaces shown on the flipped tile.</li>
+                            <li><i>Check for Crash:</i> If the marker reaches the "X" space, the market crashes. Immediately end your Sell action; your Mill does not flip and you get no income.</li>
+                            <li><i>Flip the Mill:</i> If the marker does not reach the "X" space, advance your Income as indicated on the market track. Then, flip your Cotton Mill tile and advance your Income as indicated on the flipped tile.</li>
+                        </ul>
+                        
                         <li><strong>Loan:</strong> Discard any card to take £10, £20, or £30 from the bank. Move your Income marker back 1, 2, or 3 income levels (not spaces).</li>
                         <li><strong>Pass:</strong> Discard a card to pass, do not take an action this turn.</li>
                     </ul>
